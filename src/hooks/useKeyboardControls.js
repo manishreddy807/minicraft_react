@@ -1,5 +1,5 @@
 import { useStore } from "./useStore";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function actionByKey(key) {
     const keys = {
