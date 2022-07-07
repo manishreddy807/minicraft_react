@@ -1,6 +1,11 @@
-import { usePlane } from "@react-three/cannon";
 import React, { useMemo } from "react";
-import { LinearMipmapLinearFilter, NearestFilter, RepeatWrapping, TextureLoader } from "three";
+import { usePlane } from "@react-three/cannon";
+import { 
+    LinearMipmapLinearFilter,
+    NearestFilter,
+    RepeatWrapping,
+    TextureLoader 
+} from "three";
 import { useStore } from "../hooks/useStore";
 import  grass  from "../images/grass.jpg";
 

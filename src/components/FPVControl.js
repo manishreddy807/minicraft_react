@@ -1,6 +1,8 @@
-import { PointerLockControls } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
+import { PointerLockControls as PointerLockControlsImpl} from "three/examples/jsm/controls/PointerLockControls";
+import { useThree, extend } from "@react-three/fiber";
+
+extend({PointerLockControlsImpl});
 
 export const FPVControls = (props) => {
     const controls = useRef();
@@ -12,7 +14,7 @@ export const FPVControls = (props) => {
     }, []);
 
     return(
-        <PointerLockControls 
+        <PointerLockControlsImpl 
          ref={controls}
          args={[camera, gl.domElement]}
          {...props}

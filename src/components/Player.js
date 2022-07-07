@@ -1,7 +1,7 @@
+import React, { useEffect, useRef } from "react";
 import { useSphere } from "@react-three/cannon";
 import { useFrame, useThree } from "@react-three/fiber";
 import {useKeyboardControls} from '../hooks/useKeyboardControls';
-import React, { useEffect, useRef } from "react";
 import { Vector3 } from "three";
 import { FPVControls } from "./FPVControl";
 
@@ -21,12 +21,7 @@ export const Player = (props) => {
     }, [api.velocity]);
 
     const pos = useRef([0,0,0,]);
-    useEffect(() => {
-        api.position.subscribe((v) => (
-            pos.current = v
-            [api.position]
-        ))
-    })
+     useEffect(() => api.position.subscribe((v) => (pos.current = v)), [api.position])
 
     useFrame(() => {
         camera.position.copy(
